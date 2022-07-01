@@ -1,3 +1,10 @@
+function game() {                                                                                               // The game function is used to play five rounds of the game
+    for(i=0; i<5; ++i) {                                                                                        // A for loop goes over the playround function (wich is used to play a single round) five times
+
+        playRound();
+    }
+}
+
 function computerSelection() {
     return Math.floor(Math.random() * 3) + 1;                                                                   // A function that returns an integer between 1 & 3
 }
