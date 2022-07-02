@@ -53,11 +53,9 @@ function Combination1(userChoice, programChoice) {                              
         playRound();
     } else if (!(userChoice > programChoice)) {
         console.log('User wins this round! Paper beats rock!');
-        console.log('');
         ++user;                                                                                                 // If the user wins, there variable is incremented by one
     } else {
         console.log('Program wins this round! Paper beats rock!');
-        console.log('');
         ++program;                                                                                              // If the program wins, there variable is incremented by one
     }
 }
@@ -82,11 +80,9 @@ function Combination2(userChoice, programChoice) {                              
         playRound();
     } else if (userChoice > programChoice) {
         console.log('User wins this round! Scissors beat paper!');
-        console.log('');
         ++user;                                                                                                 // If the user wins, there variable is incremented by one
     } else {
         console.log('Program wins this round! Scissors beat paper!');
-        console.log('');
         ++program;                                                                                              // If the program wins, there variable is incremented by one
     }
 }
@@ -111,19 +107,20 @@ function Combination3(userChoice, programChoice) {                              
         playRound();
     } else if (userChoice > programChoice) {
         console.log('User wins this round! Rock beats scissors!');
-        console.log('');
         ++user;                                                                                                 // If the user wins, there variable is incremented by one
     } else {
         console.log('Program wins this round! Rock beats scissors!');
-        console.log('');
         ++program;                                                                                              // If the program wins, there variable is incremented by one
     }
 }
 
 function game() {                                                                                               // The game function is used to play five rounds of the game
-    for(i=0; i<5; ++i) {                                                                                        // A for loop goes over the playRound function (wich is used to play a single round) five times
+    for(i=1; i<6; ++i) {                                                                                        // A for loop goes over the playRound function (wich is used to play a single round) five times
 
         playRound();
+
+        console.log(`ROUND ${i} SCORE IS --> user: ${user} / program:${program}`);                              // Printout the user & the computer's scores for each round
+        console.log('');
 
         if (user == 3) {                                                                                        // An If Else statement in the loop to check wheter a result should be declared after five rounds or earlier
             break;                                                                                              // The verification for that is based on the outcomes of the single rounds
@@ -135,9 +132,9 @@ function game() {                                                               
     }
 
     if (user > program) {                                                                                       // An If Else statement to check & declare the final winner 
-        console.log('User wins the game!');
+        console.log('USER WINS THE GAME!');
     } else if (user < program) {
-        console.log('Computer wins the game!');
+        console.log('COMPUTER WINS THE GAME!');
     } else {}
 }
 
