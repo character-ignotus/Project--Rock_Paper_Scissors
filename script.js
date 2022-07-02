@@ -1,10 +1,3 @@
-function game() {                                                                                               // The game function is used to play five rounds of the game
-    for(i=0; i<5; ++i) {                                                                                        // A for loop goes over the playround function (wich is used to play a single round) five times
-
-        playRound();
-    }
-}
-
 function computerSelection() {
     return Math.floor(Math.random() * 3) + 1;                                                                   // A function that returns an integer between 1 & 3
 }
@@ -35,6 +28,11 @@ function playRound(player = playerSelection(), computer = computerSelection()) {
     }                                                                                                           // Combination3: scissors-scissors, rock-rock, scissors-rock or rock-scissors choice combination                                                                                                            
 }
 
+
+let user = 1;
+let program = 1;
+
+
 function Combination1(userChoice, programChoice) {                                                              // Function for Combination1
 
     if (userChoice == 1 && programChoice == 1) {                                                                // An If Else statement is initialized to determine both the user & the computer's choices                                   
@@ -60,9 +58,11 @@ function Combination1(userChoice, programChoice) {                              
     } else if (!(userChoice > programChoice)) {
         console.log('User wins this round! Paper beats rock!');
         console.log('');
+        ++user;
     } else {
         console.log('Program wins this round! Paper beats rock!');
         console.log('');
+        ++program;
     }
 }
 
@@ -91,9 +91,11 @@ function Combination2(userChoice, programChoice) {                              
     } else if (userChoice > programChoice) {
         console.log('User wins this round! Scissors beat paper!');
         console.log('');
+        ++user;
     } else {
         console.log('Program wins this round! Scissors beat paper!');
         console.log('');
+        ++program;
     }
 }
 
@@ -122,11 +124,38 @@ function Combination3(userChoice, programChoice) {                              
     } else if (userChoice > programChoice) {
         console.log('User wins this round! Rock beats scissors!');
         console.log('');
+        ++user;
     } else {
         console.log('Program wins this round! Rock beats scissors!');
         console.log('');
+        ++program;
     }
 }
+
+function game() {                                                                                               // The game function is used to play five rounds of the game
+    for(i=0; i<5; ++i) {                                                                                        // A for loop goes over the playround function (wich is used to play a single round) five times
+
+        playRound();
+
+        if ((user == 4) || (user == 3 && program == 1 && i>2)) {
+            break;
+        } else if ((program == 4) || (program == 3 && user == 1 && i>2)) {
+            break;
+        } else {
+            continue;
+        }
+    }
+
+    if (user > program) {
+        console.log('User wins the game!');
+    } else if (user < program) {
+        console.log('Computer wins the game!');
+    } else {
+        console.log('We have a tie');
+    }
+}
+
+game();
 
 
 
