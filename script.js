@@ -12,20 +12,20 @@ function playerSelection() {
         return 2;                                                                                               // 1 is paper
     } else if (userInput == 'rock') {                                                                           // 2 is scissors                                                
         return 3;                                                                                               // 3 is rock
-    } else {
-        alert('Wrong input');
-        return
-    }
+    } else {}
 }
-
-function playRound(player = playerSelection(), computer = computerSelection()) {                                // A function that takes both the user & the computer's choice & determines wich Combination function to initialize                            
-    if ((player == 1 || player == 3) && (computer == 1 || computer == 3)) {                                     // The Combination functions are used to determine who wins the round
-        Combination1(player, computer);
-    } else if ((player == 1 || player == 2) && (computer == 1 || computer == 2)) {                              // There are three possible combinations:
-        Combination2(player, computer);
-    } else {                                                                                                    // Combination1: rock-rock, paper-paper, paper-rock or rock-paper choice combination
-        Combination3(player, computer);                                                                         // Combination2: paper-paper, scissors-scissors, paper-scissors or scissors-paper choice combination
-    }                                                                                                           // Combination3: scissors-scissors, rock-rock, scissors-rock or rock-scissors choice combination                                                                                                            
+                                                                                                                // A function that takes both the user & the computer's choice & determines wich Combination function to initialize
+function playRound(player = playerSelection(), computer = computerSelection()) {                                // The Combination functions are used to determine who wins the round                                                                  
+    if ((player == 1 || player == 3) && (computer == 1 || computer == 3)) {                                     // There are three possible combinations:
+        Combination1(player, computer);                                                                         // Combination1: rock-rock, paper-paper, paper-rock or rock-paper choice combination
+    } else if ((player == 1 || player == 2) && (computer == 1 || computer == 2)) {                              
+        Combination2(player, computer);                                                                         // Combination2: paper-paper, scissors-scissors, paper-scissors or scissors-paper choice combination
+    } else if ((player == 2 || player == 3) && (computer == 2 || computer == 3)) {                                                                                                 
+        Combination3(player, computer);                                                                         // Combination3: scissors-scissors, rock-rock, scissors-rock or rock-scissors choice combination                                                                    
+    } else {                                                                                                    
+        alert('Wrong Input! Enter one of the listed choices');                                                  // If the user has entered an incorrect input a message alerts about that, and then the user needs to enter a valid input
+        playRound();
+    }                                                                                                                                                                                                                      
 }
 
 
