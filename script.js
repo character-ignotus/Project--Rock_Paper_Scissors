@@ -114,17 +114,17 @@ function Combination3(userChoice, programChoice) {                              
     }
 }
 
-function game() {                                                                                               // The game function is used to play five rounds of the game
-    for(i=1; i<6; ++i) {                                                                                        // A for loop goes over the playRound function (wich is used to play a single round) five times
+function game() {                                                                                               // The game function is used for playing ten rounds of the game or less depending on the single round outcomes
+    for(i=1; i<11; ++i) {                                                                                       // A for loop goes over the playRound function (wich is used to play a single round) a maximum of ten times 
 
         playRound();
 
         console.log(`ROUND ${i} SCORE IS --> user: ${user} / program:${program}`);                              // Printout the user & the computer's scores for each round
         console.log('');
 
-        if (user == 3) {                                                                                        // An If Else statement in the loop to check wheter a result should be declared after five rounds or earlier
+        if (user == 5) {                                                                                        // An If Else statement in the loop to check wheter a result should be declared after ten rounds or earlier
             break;                                                                                              // The verification for that is based on the outcomes of the single rounds
-        } else if (program == 3) {
+        } else if (program == 5) {
             break;
         } else {
             continue;
