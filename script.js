@@ -133,8 +133,10 @@ function game() {                                                               
 
     if (user > program) {                                                                                           // 4. An If Else statement to check & declare the final winner 
         console.log('USER WINS THE GAME!');
+        alert('You win the game! Computer has been annihilate!')
     } else if (user < program) {
         console.log('COMPUTER WINS THE GAME!');
+        alert('You lose! Computer has annihilated you!')
     } else {}
 }
 
