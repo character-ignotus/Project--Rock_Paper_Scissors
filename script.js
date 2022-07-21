@@ -1,19 +1,24 @@
-function computerSelection() {                                                                                  // A FUNCTION THAT RETURNS A RANDOM INTEGER BETWEEN 1 & 3
+const paperBtn = document.querySelector('.paper.user');
+const scissorsBtn = document.querySelector('.scissors.user');
+const rockBtn = document.querySelector('.rock.user');
+
+
+function computerSelection() {                                                                                  
     return Math.floor(Math.random() * 3) + 1;                                                                   
 }
 
 
-function playerSelection() {                                                                                    // A FUNCTION THAT TAKES THE USER'S INPUT  
-    let userInput = prompt(`Enter your warrior of choice: "rock", "paper" or "scissors"`).toLocaleLowerCase();      // 1. The user inputs there choice. Choice is not case sensitive
-
-    if (userInput == 'paper') {                                                                                     // 2. User's choice is converted to an integer representing the given input choice
+function playerSelection() {                                                                                     
+    let userInput = prompt(`Enter your warrior of choice: "rock", "paper" or "scissors"`).toLocaleLowerCase();     
+    if (userInput == 'paper') {                                                                                     
         return 1;
-    } else if (userInput == 'scissors') {                                                                               // Each integer between 1 & 3 represents one of the three input choices:
-        return 2;                                                                                                           // - 1 is paper
-    } else if (userInput == 'rock') {                                                                                       // - 2 is scissors                                                
-        return 3;                                                                                                           // - 3 is rock
+    } else if (userInput == 'scissors') {                                                                               
+        return 2;                                                                                                           
+    } else if (userInput == 'rock') {                                                                                                                                      
+        return 3;                                                                                                           
     } else {}
-}                                                                                                               
+}   
+
                                                                                                                 // A FUNCTION THAT TAKES BOTH THE USER & THE COMPUTER'S CHOICES & DETERMINES WICH COMBINATION FUNCTION TO INITIALIZE
 function playRound(player = playerSelection(), computer = computerSelection()) {                                    // The Combination functions are used to determine who wins the round                                                                  
     if ((player == 1 || player == 3) && (computer == 1 || computer == 3)) {                                         // There are three possible combinations:
