@@ -5,9 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div id="main-container">
+        <div class="subContainer one">
+            <div>Round:</div>
+            <div></div>
+        </div>
+            
+        <div class="subContainer two">
+
+            <div class="sub one"><div>Computer has chosen:<div></div></div></div>
+
+            <div class="sub two">
+                <div class="paper computer"></div>
+                <div class="scissors computer"></div>
+                <div class="rock computer"></div>
+            </div>
+
+            <div class="sub three"></div>
+
+            <div class="sub four">
+                <div class="paper user">Paper</div>
+                <div class="scissors user">Scissors</div>
+                <div class="rock user">Rock</div>
+            </div>
+
+            <div class="sub five"><div>User has chosen:</div><div></div></div>
+        </div>
+
+        <div class="subContainer three">
+            <div>
+                <div class="img computer">Computer Score:</div>
+                <div id="computer-score"></div>
+            </div>
+            <div>Score:</div>
+            <div>
+                <div class="img user">User Score:</div>
+                <div id="user-score"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
