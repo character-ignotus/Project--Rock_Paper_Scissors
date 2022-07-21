@@ -67,25 +67,30 @@ function Combination1(userChoice, programChoice) {                              
 
     if (userChoice == programChoice) {                                                                             
         alert('We have a tie this round! Play again');                                                                  
-        roundOutcome.textContent = 'We have a tie this round! Play again';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'We have a tie this round! Play again';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'We have a tie this round! Play again';
     } else if (!(userChoice > programChoice)) {
-        roundOutcome.textContent = 'User wins this round! Paper beats rock!';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'User wins this round! Paper beats rock!';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'User wins this round! Paper beats rock!';
         user++;
         round++;
         roundCounter.textContent = `${round}`;
         computerScore.textContent = `${program}`;
         userScore.textContent = `${user}`;                                                                                                         
     } else {
-        roundOutcome.textContent = 'Program wins this round! Paper beats rock!';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'Program wins this round! Paper beats rock!';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'Program wins this round! Paper beats rock!';
         program++; 
         round++;
         roundCounter.textContent = `${round}`;
         computerScore.textContent = `${program}`;
         userScore.textContent = `${user}`;                                                                                                      
     }
+
+    winnerDeclaration(user, program);
 }
 
 function Combination2(userChoice, programChoice) {                                                             
@@ -105,25 +110,30 @@ function Combination2(userChoice, programChoice) {
 
     if (userChoice == programChoice) {                                                                              
         alert('We have a tie this round! Play again');                                                                  
-        roundOutcome.textContent = 'We have a tie this round! Play again';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'We have a tie this round! Play again';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'We have a tie this round! Play again';
     } else if (userChoice > programChoice) {
-        roundOutcome.textContent = 'User wins this round! Scissors cuts paper!';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'User wins this round! Scissors cuts paper!';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'User wins this round! Scissors cuts paper!';
         user++;
         round++;
         roundCounter.textContent = `${round}`;
         computerScore.textContent = `${program}`;
         userScore.textContent = `${user}`;                                                                                                        
     } else {
-        roundOutcome.textContent = 'Program wins this round! Scissors cuts paper!';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'Program wins this round! Scissors cuts paper!';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'Program wins this round! Scissors cuts paper!';
         program++;
         round++;
         roundCounter.textContent = `${round}`;
         computerScore.textContent = `${program}`;
         userScore.textContent = `${user}`;                                                                                                      
     }
+
+    winnerDeclaration(user, program);
 }
 
 function Combination3(userChoice, programChoice) {                                                             
@@ -143,55 +153,40 @@ function Combination3(userChoice, programChoice) {
 
     if (userChoice == programChoice) {                                                                             
         alert('We have a tie this round! Play again');                                                                
-        roundOutcome.textContent = 'We have a tie this round! Play again';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'We have a tie this round! Play again';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'We have a tie this round! Play again';
     } else if (userChoice > programChoice) {
-        roundOutcome.textContent = 'User wins this round! Rock beats scissors!';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'User wins this round! Rock beats scissors!';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'User wins this round! Rock beats scissors!';
         user++;
         round++;
         roundCounter.textContent = `${round}`;
         computerScore.textContent = `${program}`;
         userScore.textContent = `${user}`;                                                                                                        
     } else {
-        roundOutcome.textContent = 'Program wins this round! Rock beats scissors!';
-        outcome.appendChild(roundOutcome);
+        // roundOutcome.textContent = 'Program wins this round! Rock beats scissors!';
+        // outcome.appendChild(roundOutcome);
+        outcome.textContent = 'Program wins this round! Rock beats scissors!';
         program++;
         round++;
         roundCounter.textContent = `${round}`;
         computerScore.textContent = `${program}`;
         userScore.textContent = `${user}`;                                                                                                     
     }
+
+    winnerDeclaration(user, program);
 }
                                                                                                                 
-function game() {                                                                                               
-    for(i=1; i<11; ++i) {                                                                                          
 
-        playRound();
-
-        console.log(`ROUND ${i} SCORE IS --> user: ${user} / program:${program}`);                                  
-        console.log('');
-
-        if (user == 5) {                                                                                          
-            break;                                                                                                 
-        } else if (program == 5) {
-            break;
-        } else {
-            continue;
-        }
+function winnerDeclaration (currentUserScore, currentProgramScore) {
+    if (currentUserScore == 5) {
+        outcome.textContent = 'You win the game! Computer has been annihilated!';
+    } else if (currentProgramScore == 5) {
+        outcome.textContent = 'You lose! Computer has annihilated you!';
     }
-
-    if (user > program) {                                                                                           
-        console.log('USER WINS THE GAME!');
-        alert('You win the game! Computer has been annihilate!')
-    } else if (user < program) {
-        console.log('COMPUTER WINS THE GAME!');
-        alert('You lose! Computer has annihilated you!')
-    } else {}
 }
-
-game();
-
 
 
 
