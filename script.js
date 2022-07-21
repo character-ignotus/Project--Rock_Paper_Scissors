@@ -1,7 +1,12 @@
 const paperBtn = document.querySelector('.paper.user');
 const scissorsBtn = document.querySelector('.scissors.user');
 const rockBtn = document.querySelector('.rock.user');
-
+const roundCounter = document.getElementById('roundCounter');
+const computerScore = document.getElementById('computer-score');
+const userScore = document.getElementById('user-score');
+const computerChoice = document.querySelector('.sub.one div div');
+const playerChoice = document.querySelector('.sub.five div div');
+const outcome = document.querySelector('.sub.three');
 
 
 paperBtn.addEventListener('click', () => {
@@ -25,18 +30,15 @@ function computerSelection() {
     return Math.floor(Math.random() * 3) + 1;                                                                   
 }   
 
-                                                                                                                // A FUNCTION THAT TAKES BOTH THE USER & THE COMPUTER'S CHOICES & DETERMINES WICH COMBINATION FUNCTION TO INITIALIZE
-function playRound(player = playerSelection(), computer = computerSelection()) {                                    // The Combination functions are used to determine who wins the round                                                                  
-    if ((player == 1 || player == 3) && (computer == 1 || computer == 3)) {                                         // There are three possible combinations:
-        Combination1(player, computer);                                                                                 // - Combination1: rock-rock, paper-paper, paper-rock or rock-paper choice combination
+                                                                                                                
+function playRound(player, computer) {                                                                                                    
+    if ((player == 1 || player == 3) && (computer == 1 || computer == 3)) {                                         
+        Combination1(player, computer);                                                                                 
     } else if ((player == 1 || player == 2) && (computer == 1 || computer == 2)) {                              
-        Combination2(player, computer);                                                                                 // - Combination2: paper-paper, scissors-scissors, paper-scissors or scissors-paper choice combination
+        Combination2(player, computer);                                                                               
     } else if ((player == 2 || player == 3) && (computer == 2 || computer == 3)) {                                                                                                 
-        Combination3(player, computer);                                                                                 // - Combination3: scissors-scissors, rock-rock, scissors-rock or rock-scissors choice combination                                                                    
-    } else {                                                                                                    
-        alert('Wrong Input! Enter one of the listed choices');                                                      // If the user has entered an incorrect input a message alerts about that, and then the user needs to enter a valid input
-        playRound();
-    }                                                                                                                                                                                                                      
+        Combination3(player, computer);                                                                                                                                                   
+    }                                                                                                                                                                                                    
 }
 
 
@@ -49,13 +51,13 @@ function Combination1(userChoice, programChoice) {                              
     if (userChoice == 1 && programChoice == 3) {                                                                    // 1. An If Else statement is initialized to determine both the user & the computer's choices                                   
         uS = 'paper';
         pS = 'rock';
-        console.log(`USER HAS CHOSEN: ${uS}`);                                                                          // The user & the computer's choices are printed out
-        console.log(`PROGRAM HAS CHOSEN: ${pS}`);
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent = `${pS}`;
     } else if (userChoice == 3 && programChoice == 1) {
         uS = 'rock';
         pS = 'paper';
-        console.log(`USER HAS CHOSEN: ${uS}`);                                                                          // The user & the computer's choices are printed out
-        console.log(`PROGRAM HAS CHOSEN: ${pS}`);
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent = `${pS}`;
     } else {}
 
 
@@ -76,13 +78,13 @@ function Combination2(userChoice, programChoice) {                              
     if (userChoice == 1 && programChoice == 2) {                                                                    // 1. An If Else statement is initialized to determine both the user & the computer's choices                                   
         uS = 'paper';
         pS = 'scissors';
-        console.log(`USER HAS CHOSEN: ${uS}`);                                                                          // The user & the computer's choices are printed out                                                                 
-        console.log(`PROGRAM HAS CHOSEN: ${pS}`);
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent = `${pS}`;
     } else if (userChoice == 2 && programChoice == 1) {
         uS = 'scissors';
         pS = 'paper';
-        console.log(`USER HAS CHOSEN: ${uS}`);                                                                          // The user & the computer's choices are printed out                                                                 
-        console.log(`PROGRAM HAS CHOSEN: ${pS}`);
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent = `${pS}`;
     } else {}
     
 
@@ -103,13 +105,13 @@ function Combination3(userChoice, programChoice) {                              
     if (userChoice == 2 && programChoice == 3) {                                                                    // 1. An If Else statement is initialized to determine both the user & the computer's choices
         uS = 'scissors';
         pS = 'rock';
-        console.log(`USER HAS CHOSEN: ${uS}`);                                                                          // The user & the computer's choices are printed out
-        console.log(`PROGRAM HAS CHOSEN: ${pS}`);
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent = `${pS}`;
     } else if (userChoice == 3 && programChoice == 2) {
         uS = 'rock';
         pS = 'scissors';
-        console.log(`USER HAS CHOSEN: ${uS}`);                                                                          // The user & the computer's choices are printed out
-        console.log(`PROGRAM HAS CHOSEN: ${pS}`);
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent = `${pS}`;
     } else {}
         
 
