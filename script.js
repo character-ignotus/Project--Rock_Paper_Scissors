@@ -3,20 +3,26 @@ const scissorsBtn = document.querySelector('.scissors.user');
 const rockBtn = document.querySelector('.rock.user');
 
 
+
+paperBtn.addEventListener('click', () => {
+    let playerSelection = 1;
+    playRound(playerSelection, computer = computerSelection());
+});
+
+scissorsBtn.addEventListener('click', () => {
+    let playerSelection = 2;
+    playRound(playerSelection, computer = computerSelection());
+});
+
+rockBtn.addEventListener('click', () => {
+    let playerSelection = 3;
+    playRound(playerSelection, computer = computerSelection());
+});
+
+
+
 function computerSelection() {                                                                                  
     return Math.floor(Math.random() * 3) + 1;                                                                   
-}
-
-
-function playerSelection() {                                                                                     
-    let userInput = prompt(`Enter your warrior of choice: "rock", "paper" or "scissors"`).toLocaleLowerCase();     
-    if (userInput == 'paper') {                                                                                     
-        return 1;
-    } else if (userInput == 'scissors') {                                                                               
-        return 2;                                                                                                           
-    } else if (userInput == 'rock') {                                                                                                                                      
-        return 3;                                                                                                           
-    } else {}
 }   
 
                                                                                                                 // A FUNCTION THAT TAKES BOTH THE USER & THE COMPUTER'S CHOICES & DETERMINES WICH COMBINATION FUNCTION TO INITIALIZE
