@@ -7,10 +7,30 @@ const userScore = document.getElementById('user-score');
 const computerChoice = document.querySelector('.sub.one div div');
 const playerChoice = document.querySelector('.sub.five div div');
 const outcome = document.querySelector('.sub.three');
-const subContainer2 = document.querySelector('.subContainer.two')
+const subContainer2 = document.querySelector('.subContainer.two');
+const playerButtons = document.querySelector('.sub.four');
+const computerButtons = document.querySelector('.sub.two');
 
+playerButtons.style.display = 'none';
+computerButtons.style.display = 'none';
 
 const roundOutcome = document.createElement('div');
+const startBtn = document.createElement('button');
+const playAgainBtn = document.createElement('button');
+
+startBtn.textContent = 'START GAME';
+playAgainBtn.textContent = 'PLAY AGAIN';
+
+outcome.appendChild(startBtn);
+
+subContainer2.insertBefore(playAgainBtn, playerButtons);
+playAgainBtn.style.display = 'none';
+
+startBtn.addEventListener('click', () => {
+    playerButtons.style.display = 'block';
+    computerButtons.style.display = 'block';
+    outcome.removeChild(startBtn);
+});
 
 paperBtn.addEventListener('click', () => {
     let playerSelection = 1;
@@ -45,14 +65,14 @@ function playRound(player, computer) {
 }
 
 
-let user = 0;                                                                                                   // Variable for storing the user's score
+let user = 0;                                                                                                   
 let program = 0; 
-let round = 0;                                                                                               // Variable for storing the computer's score
+let round = 0;                                                                                              
 
                                                                                                                 
-function Combination1(userChoice, programChoice) {                                                              //FUNCTION FOR COMBINATION1
+function Combination1(userChoice, programChoice) {                                                           
 
-    if (userChoice == 1 && programChoice == 3) {                                                                    // 1. An If Else statement is initialized to determine both the user & the computer's choices                                   
+    if (userChoice == 1 && programChoice == 3) {                                                                                                
         uS = 'paper';
         pS = 'rock';
         playerChoice.textContent = `${uS}`;
@@ -182,9 +202,49 @@ function Combination3(userChoice, programChoice) {
 
 function winnerDeclaration (currentUserScore, currentProgramScore) {
     if (currentUserScore == 5) {
+        playerButtons.style.display = 'none';
+        computerButtons.style.display = 'none';
         outcome.textContent = 'You win the game! Computer has been annihilated!';
+        playAgainBtn.style.display = 'block';
+
+        playAgainBtn.addEventListener('click', () => {
+            outcome.textContent = '';
+
+            playerChoice.textContent = '';
+            computerChoice.textContent = '';
+            roundCounter.textContent = '';
+            computerScore.textContent = '';
+            userScore.textContent = '';
+
+            user = 0;
+            program = 0;
+            round = 0;
+
+            playerButtons.style.display = 'block';
+            playAgainBtn.style.display = 'none'
+        });
     } else if (currentProgramScore == 5) {
+        computerButtons.style.display = 'none';
+        playerButtons.style.display = 'none';
         outcome.textContent = 'You lose! Computer has annihilated you!';
+        playAgainBtn.style.display = 'block';
+
+        playAgainBtn.addEventListener('click', () => {
+            outcome.textContent = '';
+
+            playerChoice.textContent = '';
+            computerChoice.textContent = '';
+            roundCounter.textContent = '';
+            computerScore.textContent = '';
+            userScore.textContent = '';
+
+            user = 0;
+            program = 0;
+            round = 0;
+
+            playerButtons.style.display = 'block';
+            playAgainBtn.style.display = 'none'
+        });
     }
 }
 
