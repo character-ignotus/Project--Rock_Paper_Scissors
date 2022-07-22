@@ -1,0 +1,181 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #95896e;
+}
+
+#main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subContainer {
+    display: flex;
+}
+
+.subContainer.one {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    justify-content: center;
+    text-align: center;
+    flex: 1 1 0%;
+    padding: 20px;
+    margin: 40px 0 40px 0;
+    background-color: #494834;
+}
+
+.subContainer.one div:nth-child(1) {
+    font-size: 30px;
+    font-weight: 900;
+    color: #d8d48b;
+}
+
+.subContainer.one div:nth-child(2) {
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    color: #f3f1d2;
+}
+
+.subContainer.two {
+    border-style: solid;
+    flex: 3 1 0%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 40px 0;
+    background-color: hsl(33, 13%, 44%);
+}
+
+.subContainer.three {
+    border-style: solid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex: 1 1 0%;
+    padding: 20px;
+    margin: 40px 0 40px 0;
+    background-color: #494834;
+}
+
+#score {
+    font-size: 30px;
+    font-weight: 900;
+    color: #d8d48b;
+}
+
+.subContainer.three div:nth-child(1) {
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    color: #f3f1d2;
+}
+
+.subContainer.three div:nth-child(3) {
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    color: #f3f1d2;
+}
+
+.choice {
+    display: flex;
+    padding: 30px;
+    /* border-style: dotted; */
+    font-size: 24px;
+}
+
+.sub.three {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    height: 70px;
+}
+
+.choice div:nth-child(1) {
+    font-weight: 900;
+}
+
+.input div {
+    border-style: solid;
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+    border-width: 4px;
+    border-color: #323125;
+}
+
+.input div:nth-child(1) {
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+
+.input div:nth-child(2) {
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+
+.input div:nth-child(3) {
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+
+.img.user {
+    height: 200px;
+    width: 200px;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+
+.img.computer {
+    height: 200px;
+    width: 200px;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#outcomeSize {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+.Btn {
+    font-size: 20px;
+    width: 300px;
+    height: 40px;
+    border-radius: 0;
+    box-shadow: 3px 3px black;
+}
+
+.mouseEnter {
+    transform: scale(1.1);
+    border-color: yellow;
+}
+
+.mouseDown {
+    transform: scale(1);
+}
+
+
+

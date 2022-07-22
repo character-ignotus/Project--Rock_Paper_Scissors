@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="main-container">
@@ -17,33 +18,39 @@
             
         <div class="subContainer two">
 
-            <div class="sub one"><div>Computer has chosen:<div></div></div></div>
+            <div class="sub one choice">
+                <div>Computer has chosen:</div>
+                <div id="computer-choice"></div>
+            </div>
 
-            <div class="sub two">
-                <div class="paper computer"></div>
-                <div class="scissors computer"></div>
-                <div class="rock computer"></div>
+            <div class="sub two input">
+                <div class="paper computer">Paper</div>
+                <div class="scissors computer">Scissors</div>
+                <div class="rock computer">Rock</div>
             </div>
 
             <div class="sub three"></div>
 
-            <div class="sub four">
+            <div class="sub four input">
                 <div class="paper user">Paper</div>
                 <div class="scissors user">Scissors</div>
                 <div class="rock user">Rock</div>
             </div>
 
-            <div class="sub five"><div>User has chosen:<div></div></div></div>
+            <div class="sub five choice">
+                <div>User has chosen:</div>
+                <div id="user-choice"></div>
+            </div>
         </div>
 
         <div class="subContainer three">
             <div>
-                <div class="img computer">Computer Score:</div>
+                <div class="img computer"></div>
                 <div id="computer-score"></div>
             </div>
-            <div>Score:</div>
+            <div id="">Score:</div>
             <div>
-                <div class="img user">User Score:</div>
+                <div class="img user"></div>
                 <div id="user-score"></div>
             </div>
         </div>
