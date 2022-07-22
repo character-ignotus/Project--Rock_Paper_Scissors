@@ -109,37 +109,47 @@ body {
 }
 
 .input div:nth-child(1) {
-    background-image: url();
+    background-image: url(Images/Objects/Paper.svg);
     background-size: cover;
     background-position: center;
 }
 
 .input div:nth-child(2) {
-    background-image: url();
+    background-image: url(Images/Objects/Scissors.svg);
     background-size: cover;
     background-position: center;
 }
 
 .input div:nth-child(3) {
-    background-image: url();
+    background-image: url(Images/Objects/Rock.svg);
     background-size: cover;
     background-position: center;
 }
 
-.img.user {
+#imgUser {
     height: 200px;
     width: 200px;
-    background-image: url();
+    background-image: url(Images/User/VaultStandby.svg);
     background-size: cover;
     background-position: center;
 }
 
-.img.computer {
+#imgComputer {
     height: 200px;
     width: 200px;
-    background-image: url();
+    background-image: url(Images/Computer/CodsworthStandby.svg);
     background-size: cover;
     background-position: center;
+}
+
+#user-score {
+    height: 30px;
+    padding: 10px;
+}
+
+#computer-score {
+    height: 30px;
+    padding: 10px;
 }
 
 .invisible {
@@ -168,13 +178,103 @@ body {
     box-shadow: 3px 3px black;
 }
 
-.mouseEnter {
+#mouseEnter {
     transform: scale(1.1);
     border-color: yellow;
+    transition: .3s;
 }
 
-.mouseDown {
-    transform: scale(1);
+#mouseDown {
+    transform: scale(0.7);
+    transition: .2s;
+}
+
+#startButtonEnter {
+    transform: scale(1.3);
+    transition: .3s;
+}
+
+
+/* Images */
+
+#UserPaper {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/User/VaultPaper.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#ComputerPaper {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/Computer/CodsworthPaper.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#UserScissors {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/User/VaultScissors.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#ComputerScissors {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/Computer/CodsworthScissors.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#UserRock {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/User/VaultRock.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#ComputerRock {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/Computer/CodsworthRock.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#UserWinner {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/User/VaultWinner.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#ComputerWinner {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/Computer/CodsworthWinner.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#UserLoser {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/User/VaultLoser.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+#ComputerLoser {
+    height: 200px;
+    width: 200px;
+    background-image: url(Images/Computer/CodsworthLoser.svg);
+    background-size: cover;
+    background-position: center;
 }
 
 

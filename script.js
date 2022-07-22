@@ -13,6 +13,13 @@ const computerButtons = document.querySelector('.sub.two');
 const subOne = document.querySelector('.sub.one');
 const subFive= document.querySelector('.sub.five');
 
+const computerImg = document.querySelector('.ImageOfComputer');
+const userImg = document.querySelector('.ImageOfUser');
+
+// NodeList //
+const playerBtnsSelection = document.querySelectorAll('.sub.four div');
+// NodeList //
+
 playerChoice.setAttribute('style', 'font-style: italic; color: #f3f1d2;');
 computerChoice.setAttribute('style', 'font-style: italic; color: #f3f1d2;');
 
@@ -42,60 +49,45 @@ startBtn.addEventListener('click', () => {
     outcome.removeChild(startBtn);
 });
 
+
 paperBtn.addEventListener('mousedown', () => {
-    paperBtn.classList.add('mouseDown');
+    paperBtn.setAttribute('id', 'mouseDown');
     let playerSelection = 1;
     playRound(playerSelection, computer = computerSelection());
 });
 
-        paperBtn.addEventListener('mouseup', () => {
-            paperBtn.classList.remove('mouseDown');
-        });
-
-        paperBtn.addEventListener('mouseenter', () => {
-            paperBtn.classList.add('mouseEnter');
-        });
-
-        paperBtn.addEventListener('mouseleave', () => {
-            paperBtn.classList.remove('mouseEnter');
-        });
-
 scissorsBtn.addEventListener('mousedown', () => {
-    scissorsBtn.classList.add('mouseDown');
+    scissorsBtn.setAttribute('id', 'mouseDown');
     let playerSelection = 2;
     playRound(playerSelection, computer = computerSelection());
 });
 
-        scissorsBtn.addEventListener('mouseup', () => {
-            scissorsBtn.classList.remove('mouseDown');
-        });
-
-        scissorsBtn.addEventListener('mouseenter', () => {
-            scissorsBtn.classList.add('mouseEnter');
-        });
-
-        scissorsBtn.addEventListener('mouseleave', () => {
-            scissorsBtn.classList.remove('mouseEnter');
-        });
-
 rockBtn.addEventListener('mousedown', () => {
-    rockBtn.classList.add('mouseDown');
+    rockBtn.setAttribute('id', 'mouseDown');
     let playerSelection = 3;
     playRound(playerSelection, computer = computerSelection());
 });
 
-        rockBtn.addEventListener('mouseup', () => {
-            rockBtn.classList.remove('mouseDown');
-        });
 
-        rockBtn.addEventListener('mouseenter', () => {
-            rockBtn.classList.add('mouseEnter');
-        });
+// NodeList Event Add //
 
-        rockBtn.addEventListener('mouseleave', () => {
-            rockBtn.classList.remove('mouseEnter');
-        });
+playerBtnsSelection.forEach((button) => {
+    button.addEventListener('mouseup', () => {
+        button.removeAttribute('id', 'mouseDown');
+    });
 
+    button.addEventListener('mouseenter', () => {
+        button.setAttribute('id', 'mouseEnter');
+        // button.removeAttribute('id', 'mouseLeave');
+    });
+
+    button.addEventListener('mouseleave', () => {
+        button.removeAttribute('id', 'mouseEnter');
+        // button.setAttribute('id', 'mouseLeave');
+    });
+});
+
+// NodeList Event Add // 
 
 
 function computerSelection() {                                                                                  
@@ -126,11 +118,23 @@ function Combination1(userChoice, programChoice) {
         pS = 'rock';
         playerChoice.textContent = `${uS}`;
         computerChoice.textContent =  `${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserPaper');
+        computerImg.setAttribute('id', 'ComputerRock');
     } else if (userChoice == 3 && programChoice == 1) {
         uS = 'rock';
         pS = 'paper'; 
         playerChoice.textContent =  `${uS}`;
         computerChoice.textContent =  `${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserRock');
+        computerImg.setAttribute('id', 'ComputerPaper');
     } else {}
 
 
@@ -162,11 +166,23 @@ function Combination2(userChoice, programChoice) {
         pS = 'scissors';
         playerChoice.textContent = `${uS}`;
         computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserPaper');
+        computerImg.setAttribute('id', 'ComputerScissors');
     } else if (userChoice == 2 && programChoice == 1) {
         uS = 'scissors';
         pS = 'paper';
         playerChoice.textContent = ` ${uS}`;
         computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserScissors');
+        computerImg.setAttribute('id', 'ComputerPaper');
     } else {}
     
 
@@ -198,11 +214,23 @@ function Combination3(userChoice, programChoice) {
         pS = 'rock';
         playerChoice.textContent = ` ${uS}`;
         computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserScissors');
+        computerImg.setAttribute('id', 'ComputerRock');
     } else if (userChoice == 3 && programChoice == 2) {
         uS = 'rock';
         pS = 'scissors';
         playerChoice.textContent = ` ${uS}`;
         computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserRock');
+        computerImg.setAttribute('id', 'ComputerScissors');
     } else {}
         
 
@@ -230,6 +258,13 @@ function Combination3(userChoice, programChoice) {
 
 function winnerDeclaration (currentUserScore, currentProgramScore) {
     if (currentUserScore == 5) {
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserWinner');
+        computerImg.setAttribute('id', 'ComputerLoser');
+
         playerButtons.classList.remove('visible');
         computerButtons.classList.remove('visible');
         playerButtons.classList.add('invisible');
@@ -260,8 +295,21 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
             computerButtons.classList.remove('invisible');
             playerButtons.classList.add('visible');
             computerButtons.classList.add('visible');
+
+            userImg.removeAttribute('id');
+            computerImg.removeAttribute('id');
+    
+            userImg.setAttribute('id', 'imgUser');
+            computerImg.setAttribute('id', 'imgComputer');
         });
     } else if (currentProgramScore == 5) {
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserLoser');
+        computerImg.setAttribute('id', 'ComputerWinner');
+
         playerButtons.classList.remove('visible');
         computerButtons.classList.remove('visible');
         playerButtons.classList.add('invisible');
@@ -292,6 +340,12 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
             computerButtons.classList.remove('invisible');
             playerButtons.classList.add('visible');
             computerButtons.classList.add('visible');
+
+            userImg.removeAttribute('id');
+            computerImg.removeAttribute('id');
+    
+            userImg.setAttribute('id', 'imgUser');
+            computerImg.setAttribute('id', 'imgComputer');
         });
     }
 }
