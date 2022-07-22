@@ -16,6 +16,8 @@ const subFive= document.querySelector('.sub.five');
 const computerImg = document.querySelector('.ImageOfComputer');
 const userImg = document.querySelector('.ImageOfUser');
 
+const rules = document.createElement('div');
+
 // NodeList //
 const playerBtnsSelection = document.querySelectorAll('.sub.four div');
 // NodeList //
@@ -25,6 +27,7 @@ computerChoice.setAttribute('style', 'font-style: italic; color: #f3f1d2;');
 
 playerButtons.classList.add('invisible');
 computerButtons.classList.add('invisible');
+rules.setAttribute('style', 'font-size: 24px; font-family: Roboto, sans-serif; font-weight: 900;')
 
 const roundOutcome = document.createElement('div');
 const startBtn = document.createElement('button');
@@ -35,8 +38,10 @@ playAgainBtn.classList.add('Btn');
 
 startBtn.textContent = 'START GAME';
 playAgainBtn.textContent = 'PLAY AGAIN';
+rules.textContent = 'First to reach 5 points wins!';
 
 outcome.appendChild(startBtn);
+subContainer2.insertBefore(rules, playerButtons);
 
 subContainer2.insertBefore(playAgainBtn, playerButtons);
 playAgainBtn.classList.add('invisible');
@@ -47,6 +52,7 @@ startBtn.addEventListener('click', () => {
     playerButtons.classList.add('visible');
     computerButtons.classList.add('visible');
     outcome.removeChild(startBtn);
+    subContainer2.removeChild(rules);
 });
 
 
@@ -274,6 +280,8 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
         playAgainBtn.classList.remove('invisible');
         playAgainBtn.classList.add('visible');
 
+        subContainer2.insertBefore(rules, playAgainBtn);
+
         playAgainBtn.addEventListener('click', () => {
             outcome.textContent = '';
             outcome.removeAttribute('id', 'outcomeSize');
@@ -301,6 +309,8 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
     
             userImg.setAttribute('id', 'imgUser');
             computerImg.setAttribute('id', 'imgComputer');
+
+            subContainer2.removeChild(rules);
         });
     } else if (currentProgramScore == 5) {
 
@@ -318,6 +328,8 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
         outcome.textContent = 'You lose! Computer has annihilated you!';
         playAgainBtn.classList.remove('invisible');
         playAgainBtn.classList.add('visible');
+
+        subContainer2.insertBefore(rules, playAgainBtn);
 
         playAgainBtn.addEventListener('click', () => {
             outcome.textContent = '';
@@ -346,6 +358,8 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
     
             userImg.setAttribute('id', 'imgUser');
             computerImg.setAttribute('id', 'imgComputer');
+
+            subContainer2.removeChild(rules);
         });
     }
 }
