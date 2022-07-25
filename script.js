@@ -13,6 +13,12 @@ const computerButtons = document.querySelector('.sub.two');
 const subOne = document.querySelector('.sub.one');
 const subFive= document.querySelector('.sub.five');
 
+const computerPaperBtn = document.querySelector('.paper.computer');
+const computerScissorsBtn = document.querySelector('.scissors.computer');
+const computerRockBtn = document.querySelector('.rock.computer');
+
+console.log(computerPaperBtn);
+
 const computerImg = document.querySelector('.ImageOfComputer');
 const userImg = document.querySelector('.ImageOfUser');
 
@@ -127,9 +133,13 @@ function Combination1(userChoice, programChoice) {
 
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
 
         userImg.setAttribute('id', 'UserPaper');
         computerImg.setAttribute('id', 'ComputerRock');
+        computerRockBtn.setAttribute('id', 'computerFeedback');
     } else if (userChoice == 3 && programChoice == 1) {
         uS = 'rock';
         pS = 'paper'; 
@@ -138,9 +148,43 @@ function Combination1(userChoice, programChoice) {
 
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
 
         userImg.setAttribute('id', 'UserRock');
         computerImg.setAttribute('id', 'ComputerPaper');
+        computerPaperBtn.setAttribute('id', 'computerFeedback');
+    } else if (userChoice == 1 && programChoice == 1) {
+        uS = 'paper';
+        pS = 'paper';
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent =  `${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserPaper');
+        computerImg.setAttribute('id', 'ComputerPaper');
+        computerPaperBtn.setAttribute('id', 'computerFeedback');
+    } else if (userChoice == 3 && programChoice == 3) {
+        uS = 'rock';
+        pS = 'rock';
+        playerChoice.textContent = `${uS}`;
+        computerChoice.textContent =  `${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserRock');
+        computerImg.setAttribute('id', 'ComputerRock');
+        computerRockBtn.setAttribute('id', 'computerFeedback'); 
     } else {}
 
 
@@ -175,9 +219,13 @@ function Combination2(userChoice, programChoice) {
 
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
 
         userImg.setAttribute('id', 'UserPaper');
         computerImg.setAttribute('id', 'ComputerScissors');
+        computerScissorsBtn.setAttribute('id', 'computerFeedback'); 
     } else if (userChoice == 2 && programChoice == 1) {
         uS = 'scissors';
         pS = 'paper';
@@ -186,9 +234,43 @@ function Combination2(userChoice, programChoice) {
 
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
 
         userImg.setAttribute('id', 'UserScissors');
         computerImg.setAttribute('id', 'ComputerPaper');
+        computerPaperBtn.setAttribute('id', 'computerFeedback'); 
+    } else if (userChoice == 1 && programChoice == 1) {
+        uS = 'paper';
+        pS = 'paper';
+        playerChoice.textContent = ` ${uS}`;
+        computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserPaper');
+        computerImg.setAttribute('id', 'ComputerPaper');
+        computerPaperBtn.setAttribute('id', 'computerFeedback'); 
+    } else if (userChoice == 2 && programChoice == 2) {
+        uS = 'scissors';
+        pS = 'scissors';
+        playerChoice.textContent = ` ${uS}`;
+        computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserScissors');
+        computerImg.setAttribute('id', 'ComputerScissors');
+        computerScissorsBtn.setAttribute('id', 'computerFeedback'); 
     } else {}
     
 
@@ -223,9 +305,13 @@ function Combination3(userChoice, programChoice) {
 
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
 
         userImg.setAttribute('id', 'UserScissors');
         computerImg.setAttribute('id', 'ComputerRock');
+        computerRockBtn.setAttribute('id', 'computerFeedback'); 
     } else if (userChoice == 3 && programChoice == 2) {
         uS = 'rock';
         pS = 'scissors';
@@ -234,9 +320,43 @@ function Combination3(userChoice, programChoice) {
 
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
 
         userImg.setAttribute('id', 'UserRock');
         computerImg.setAttribute('id', 'ComputerScissors');
+        computerScissorsBtn.setAttribute('id', 'computerFeedback'); 
+    } else if (userChoice == 2 && programChoice == 2) {
+        uS = 'scissors';
+        pS = 'scissors';
+        playerChoice.textContent = ` ${uS}`;
+        computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserScissors');
+        computerImg.setAttribute('id', 'ComputerScissors');
+        computerScissorsBtn.setAttribute('id', 'computerFeedback');  
+    } else if (userChoice == 3 && programChoice == 3) {
+        uS = 'rock';
+        pS = 'rock';
+        playerChoice.textContent = ` ${uS}`;
+        computerChoice.textContent = ` ${pS}`;
+
+        userImg.removeAttribute('id');
+        computerImg.removeAttribute('id');
+        computerRockBtn.removeAttribute('id');
+        computerPaperBtn.removeAttribute('id');
+        computerScissorsBtn.removeAttribute('id');
+
+        userImg.setAttribute('id', 'UserRock');
+        computerImg.setAttribute('id', 'ComputerRock');
+        computerRockBtn.setAttribute('id', 'computerFeedback');    
     } else {}
         
 
@@ -306,6 +426,10 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
 
             userImg.removeAttribute('id');
             computerImg.removeAttribute('id');
+
+            computerRockBtn.removeAttribute('id');
+            computerPaperBtn.removeAttribute('id');
+            computerScissorsBtn.removeAttribute('id');
     
             userImg.setAttribute('id', 'imgUser');
             computerImg.setAttribute('id', 'imgComputer');
@@ -355,6 +479,10 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
 
             userImg.removeAttribute('id');
             computerImg.removeAttribute('id');
+
+            computerRockBtn.removeAttribute('id');
+            computerPaperBtn.removeAttribute('id');
+            computerScissorsBtn.removeAttribute('id');
     
             userImg.setAttribute('id', 'imgUser');
             computerImg.setAttribute('id', 'imgComputer');

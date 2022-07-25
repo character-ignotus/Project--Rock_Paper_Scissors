@@ -7,6 +7,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .subContainer {
@@ -64,6 +65,7 @@ body {
     font-size: 30px;
     font-weight: 900;
     color: #d8d48b;
+    padding: 10px;
 }
 
 .subContainer.three div:nth-child(1) {
@@ -109,35 +111,35 @@ body {
 }
 
 .input div:nth-child(1) {
-    background-image: url(Images/Objects/Paper.svg);
+    background-image: url(Images/Objects/PNG/Paper.png);
     background-size: cover;
     background-position: center;
 }
 
 .input div:nth-child(2) {
-    background-image: url(Images/Objects/Scissors.svg);
+    background-image: url(Images/Objects/PNG/Scissors.png);
     background-size: cover;
     background-position: center;
 }
 
 .input div:nth-child(3) {
-    background-image: url(Images/Objects/Rock.svg);
+    background-image: url(Images/Objects/PNG/Rock.png);
     background-size: cover;
     background-position: center;
 }
 
 #imgUser {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/User/VaultStandby.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/User/JPG/Vault-Standby.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #imgComputer {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/Computer/CodsworthStandby.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/Computer/JPG/Codsworth-Standby.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -181,12 +183,12 @@ body {
 #mouseEnter {
     transform: scale(1.1);
     border-color: yellow;
-    transition: .3s;
+    transition: .15s;
 }
 
 #mouseDown {
-    transform: scale(0.7);
-    transition: .2s;
+    transform: scale(0.6);
+    transition: .15s;
 }
 
 #startButtonEnter {
@@ -198,83 +200,91 @@ body {
 /* Images */
 
 #UserPaper {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/User/VaultPaper.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/User/JPG/Vault-Ppaer.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #ComputerPaper {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/Computer/CodsworthPaper.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/Computer/JPG/Codsworth-Paper.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #UserScissors {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/User/VaultScissors.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/User/JPG/Vault-Scissors.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #ComputerScissors {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/Computer/CodsworthScissors.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/Computer/JPG/Codsworth-Scissors.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #UserRock {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/User/VaultRock.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/User/JPG/Vault-Rock.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #ComputerRock {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/Computer/CodsworthRock.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/Computer/JPG/Codsworth-Rock.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #UserWinner {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/User/VaultWinner.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/User/JPG/Vault-Winner.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #ComputerWinner {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/Computer/CodsworthWinner.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/Computer/JPG/Codsworth-Winner.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #UserLoser {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/User/VaultLoser.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/User/JPG/Vault-Loser.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #ComputerLoser {
-    height: 200px;
-    width: 200px;
-    background-image: url(Images/Computer/CodsworthLoser.svg);
+    height: 250px;
+    width: 220px;
+    background-image: url(Images/Computer/JPG/Codsworth-Loser.jpg);
     background-size: cover;
     background-position: center;
+}
+
+
+
+#computerFeedback {
+    border-color: yellow;
+    transform: scale(1.05);
+    transition: .2s;
 }
 
 
