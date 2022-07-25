@@ -1,7 +1,8 @@
 # Project: "Rock Paper Scissors"
 
 ### Description of project: 
-A web page in which a simple implementation of a classic game of "rock paper scissors" is made using JavaScript, HTML, CSS & DOM Manipulation.
+A web page in which a simple implementation of a classic game of "rock paper scissors" is made using JavaScript, HTML, CSS & DOM Manipulation. The theme of the game 
+regarding the color palette & the images is based on the popular series of games, "Fallout".
 
 ### Acquired skills through the project:
 
