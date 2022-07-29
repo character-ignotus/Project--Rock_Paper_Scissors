@@ -12,46 +12,38 @@ const playerButtons = document.querySelector('.sub.four');
 const computerButtons = document.querySelector('.sub.two');
 const subOne = document.querySelector('.sub.one');
 const subFive= document.querySelector('.sub.five');
-
-const computerPaperBtn = document.querySelector('.paper.computer');
-const computerScissorsBtn = document.querySelector('.scissors.computer');
-const computerRockBtn = document.querySelector('.rock.computer');
-
-console.log(computerPaperBtn);
-
-const computerImg = document.querySelector('.ImageOfComputer');
-const userImg = document.querySelector('.ImageOfUser');
-
 const rules = document.createElement('div');
-
-// NodeList //
-const playerBtnsSelection = document.querySelectorAll('.sub.four div');
-// NodeList //
-
-playerChoice.setAttribute('style', 'font-style: italic; color: #f3f1d2;');
-computerChoice.setAttribute('style', 'font-style: italic; color: #f3f1d2;');
-
-playerButtons.classList.add('invisible');
-computerButtons.classList.add('invisible');
-rules.setAttribute('style', 'font-size: 24px; font-family: Roboto, sans-serif; font-weight: 900;')
-
 const roundOutcome = document.createElement('div');
 const startBtn = document.createElement('button');
 const playAgainBtn = document.createElement('button');
+const computerPaperBtn = document.querySelector('.paper.computer');
+const computerScissorsBtn = document.querySelector('.scissors.computer');
+const computerRockBtn = document.querySelector('.rock.computer');
+const computerImg = document.querySelector('.ImageOfComputer');
+const userImg = document.querySelector('.ImageOfUser');
+const playerBtnsSelection = document.querySelectorAll('.sub.four div');
 
+// Set element's styles
+playerChoice.setAttribute('style', 'font-style: italic; color: #f3f1d2;');
+computerChoice.setAttribute('style', 'font-style: italic; color: #f3f1d2;');
+rules.setAttribute('style', 'font-size: 24px; font-family: Roboto, sans-serif; font-weight: 900;')
+playerButtons.classList.add('invisible');
+computerButtons.classList.add('invisible');
 startBtn.classList.add('Btn');
 playAgainBtn.classList.add('Btn');
+playAgainBtn.classList.add('invisible');
 
+// Set element's text
 startBtn.textContent = 'START GAME';
 playAgainBtn.textContent = 'PLAY AGAIN';
 rules.textContent = 'First to reach 5 points wins!';
 
+// Insert elements in DOM
 outcome.appendChild(startBtn);
 subContainer2.insertBefore(rules, playerButtons);
-
 subContainer2.insertBefore(playAgainBtn, playerButtons);
-playAgainBtn.classList.add('invisible');
 
+// Add Event Listeners
 startBtn.addEventListener('click', () => {
     playerButtons.classList.remove('invisible');
     computerButtons.classList.remove('invisible');
@@ -60,7 +52,6 @@ startBtn.addEventListener('click', () => {
     outcome.removeChild(startBtn);
     subContainer2.removeChild(rules);
 });
-
 
 paperBtn.addEventListener('mousedown', () => {
     paperBtn.setAttribute('id', 'mouseDown');
@@ -80,9 +71,6 @@ rockBtn.addEventListener('mousedown', () => {
     playRound(playerSelection, computer = computerSelection());
 });
 
-
-// NodeList Event Add //
-
 playerBtnsSelection.forEach((button) => {
     button.addEventListener('mouseup', () => {
         button.removeAttribute('id', 'mouseDown');
@@ -90,23 +78,19 @@ playerBtnsSelection.forEach((button) => {
 
     button.addEventListener('mouseenter', () => {
         button.setAttribute('id', 'mouseEnter');
-        // button.removeAttribute('id', 'mouseLeave');
     });
 
     button.addEventListener('mouseleave', () => {
         button.removeAttribute('id', 'mouseEnter');
-        // button.setAttribute('id', 'mouseLeave');
     });
 });
 
-// NodeList Event Add // 
-
-
+// Random number function between 1 & 3
 function computerSelection() {                                                                                  
     return Math.floor(Math.random() * 3) + 1;                                                                   
 }   
-
-                                                                                                                
+  
+// Evaluates player & computer selection
 function playRound(player, computer) {                                                                                                    
     if ((player == 1 || player == 3) && (computer == 1 || computer == 3)) {                                         
         Combination1(player, computer);                                                                                 
@@ -117,14 +101,15 @@ function playRound(player, computer) {
     }                                                                                                                                                                                                    
 }
 
-
+// Stores current User & computer scores
 let user = 0;                                                                                                   
 let program = 0; 
+
+// Stores current round
 let round = 0;                                                                                              
 
-                                                                                                                
+// Determines round winner based on the given combination of there choices                                                                                                      
 function Combination1(userChoice, programChoice) {                                                           
-
     if (userChoice == 1 && programChoice == 3) {                                                                                                
         uS = 'paper';
         pS = 'rock';
@@ -187,7 +172,6 @@ function Combination1(userChoice, programChoice) {
         computerRockBtn.setAttribute('id', 'computerFeedback'); 
     } else {}
 
-
     if (userChoice == programChoice) {                                                                                          
         outcome.textContent = 'We have a tie this round! Play again';
     } else if (!(userChoice > programChoice)) {
@@ -209,8 +193,8 @@ function Combination1(userChoice, programChoice) {
     winnerDeclaration(user, program);
 }
 
+// Determines round winner based on the given combination of there choices   
 function Combination2(userChoice, programChoice) {                                                             
-
     if (userChoice == 1 && programChoice == 2) {                                                                                               
         uS = 'paper';
         pS = 'scissors';
@@ -273,7 +257,6 @@ function Combination2(userChoice, programChoice) {
         computerScissorsBtn.setAttribute('id', 'computerFeedback'); 
     } else {}
     
-
     if (userChoice == programChoice) {                                                                              
         outcome.textContent = 'We have a tie this round! Play again';
     } else if (userChoice > programChoice) {
@@ -295,8 +278,8 @@ function Combination2(userChoice, programChoice) {
     winnerDeclaration(user, program);
 }
 
+// Determines round winner based on the given combination of there choices   
 function Combination3(userChoice, programChoice) {                                                             
-
     if (userChoice == 2 && programChoice == 3) {                                                                    
         uS = 'scissors';
         pS = 'rock';
@@ -359,7 +342,6 @@ function Combination3(userChoice, programChoice) {
         computerRockBtn.setAttribute('id', 'computerFeedback');    
     } else {}
         
-
     if (userChoice == programChoice) {                                                                             
         outcome.textContent = 'We have a tie this round! Play again';
     } else if (userChoice > programChoice) {
@@ -381,10 +363,9 @@ function Combination3(userChoice, programChoice) {
     winnerDeclaration(user, program);
 }
                                                                                                                 
-
+// Determines the winner of the game
 function winnerDeclaration (currentUserScore, currentProgramScore) {
     if (currentUserScore == 5) {
-
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
 
@@ -437,7 +418,6 @@ function winnerDeclaration (currentUserScore, currentProgramScore) {
             subContainer2.removeChild(rules);
         });
     } else if (currentProgramScore == 5) {
-
         userImg.removeAttribute('id');
         computerImg.removeAttribute('id');
 
