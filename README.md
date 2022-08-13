@@ -2,7 +2,7 @@
 
 ### Description of project: 
 A web page in which a simple implementation of a classic game of "rock paper scissors" is made using JavaScript, HTML, CSS & DOM Manipulation. The theme of the game 
-regarding the color palette & the images is based on the popular series of games, "Fallout".
+regarding the color palette & the images is based on the popular series of games, "Fallout". To start playing [visit this site](https://character-ignotus.github.io/Project--Rock_Paper_Scissors/).
 
 ### Acquired skills through the project:
 
@@ -24,3 +24,7 @@ regarding the color palette & the images is based on the popular series of games
     - Adding or removing selectors to those elements.
     - Adding text in those elements ot directly inserting HTML (Which is not recommended).
     - Executing certain operations depending on the event usin event listeners.
+
+### Acknowledgement:
+
+Project inspiration from [The Odin Project](https://www.theodinproject.com/)
