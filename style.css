@@ -328,16 +328,16 @@ body {
     }
   
     .visible {
-      gap: 25px;
+      gap: 18px;
     }
   
     .sub.three {
-      font-size: 24px;
+      font-size: 22px;
       text-align: center;
     }
   
     .choice {
-      font-size: 24px;
+      font-size: 22px;
     }
   
     #outcomeSize {
